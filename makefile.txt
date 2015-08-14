@@ -1,0 +1,14 @@
+OBJS = LowerCase.o
+CC = g++
+DEBUG = -g
+CFLAGS = -Wall -c $(DEBUG)
+LFLAGS = -Wall $(DEBUG)
+
+LowerCase : $(OBJS)
+		   $(CC) $(LFLAGS) $(OBJS) -o LowerCase
+
+LowerCase.o : LowerCase.cpp
+			 $(CC) $(CFLAGS) LowerCase.cpp
+			 
+clean:
+	\rm *.o *~ LowerCase
